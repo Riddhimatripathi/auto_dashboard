@@ -3,6 +3,14 @@ import streamlit as st
 import pandas as pd
 import datetime
 import plotly.express as px
+import sys
+import subprocess
+
+try:
+    import plotly
+except ImportError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "plotly"])
+    import plotly
 
 st.set_page_config(page_title="Auto Dashboard Generator", layout="wide")
 
